@@ -722,6 +722,19 @@ module.exports = class User extends CocoModel
       me.startExperiment('m7', value, probability)
     value
 
+  removeRelatedAccount: (relatedUserId, options={}) ->
+    options.url = '/db/user/related-accounts'
+    options.type = 'DELETE'
+    options.data ?= {}
+    options.data.userId = relatedUserId
+    @fetch(options)
+
+  linkRelatedAccount: (body, options = {}) ->
+    options.url = '/db/user/related-accounts'
+    options.type = 'PUT'
+    options.data ?= body
+    @fetch(options)
+
   # Feature Flags
   # Abstract raw settings away from specific UX changes
   allowStudentHeroPurchase: -> features?.classroomItems ? false and @isStudent()
