@@ -4319,3 +4319,5 @@ module.exports = nativeDescription: "English", englishDescription: "English", tr
     send_verify_email: "Send Verify Email"
     verified: "Verified"
     switch: "Switch"
+    title: "Related Accounts"
+    bi_directional_help_text: "Allow added user to switch to your account?"
